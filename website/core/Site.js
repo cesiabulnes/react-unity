@@ -19,13 +19,13 @@ var Site = React.createClass({
         <head>
           <meta charSet="utf-8" />
           <meta httpEquiv="X-UA-Compatible" content="IE=edge,chrome=1" />
-          <title>React Native | A framework for building native apps using React</title>
+          <title>React Unity | A framework for building native Unity UI using React</title>
           <meta name="viewport" content="width=device-width" />
-          <meta property="og:title" content="React Native | A framework for building native apps using React" />
+          <meta property="og:title" content="React Unity | A framework for building native Unity UI using React" />
           <meta property="og:type" content="website" />
-          <meta property="og:url" content="http://facebook.github.io/react-native/index.html" />
-          <meta property="og:image" content="http://facebook.github.io/react-native/img/opengraph.png?2" />
-          <meta property="og:description" content="A framework for building native apps using React" />
+          <meta property="og:url" content="http://unity3d.github.io/react-unity/index.html" />
+          <meta property="og:image" content="http://unity3d.github.io/react-unity/img/opengraph.png?2" />
+          <meta property="og:description" content="A framework for building native Unity UI using React" />
 
           <link rel="shortcut icon" href="/react-native/img/favicon.png?2" />
           <link rel="stylesheet" href="/react-native/css/react-native.css" />
@@ -40,7 +40,7 @@ var Site = React.createClass({
               <div className="wrap">
                 <a className="nav-home" href="/react-native/">
                   <img src="/react-native/img/header_logo.png" />
-                  React Native
+                  React Unity
                 </a>
                 <HeaderLinks section={this.props.section} />
               </div>
@@ -49,7 +49,7 @@ var Site = React.createClass({
             {this.props.children}
 
             <footer className="wrap">
-              <div className="right">© 2015 Facebook Inc.</div>
+              <div className="right">© 2015 Unity Technologies Inc.</div>
             </footer>
           </div>
 

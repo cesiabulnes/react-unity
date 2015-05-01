@@ -60,6 +60,6 @@ var app = connect()
 var portToUse = port || 8080;
 var server = http.createServer(app);
 server.listen(portToUse, function(){
-  console.log('Open http://localhost:' + portToUse + '/react-native/index.html');
+  console.log('Open http://localhost:' + portToUse + '/react-unity/index.html');
 });
 module.exports = server;
