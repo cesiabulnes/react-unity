@@ -4,7 +4,7 @@
   "description": "A framework for building native apps using React",
   "repository": {
     "type": "git",
-    "url": "git@github.com:facebook/react-native.git"
+    "url": "git@github.com:pgavazzi/react-native.git"
   },
   "jest": {
     "scriptPreprocessor": "jestSupport/scriptPreprocess.js",
