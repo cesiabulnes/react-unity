@@ -12,7 +12,7 @@ var CLI_MODULE_PATH = function() {
   return path.resolve(
     process.cwd(),
     'node_modules',
-    'react-native',
+    'react-unity',
     'cli'
   );
 };
@@ -82,15 +82,15 @@ function init(name) {
     version: '0.0.1',
     private: true,
     scripts: {
-      start: 'node_modules/react-native/packager/packager.sh'
+      start: 'node_modules/react-unity/packager/packager.sh'
     }
   };
   fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(packageJson));
   process.chdir(root);
 
-  run('npm install --save git://github.com/pgavazzi/react-native.git#acf46c0347', function(e) {
+  run('npm install --save git://github.com/pgavazzi/react-unity.git#acf46c0347', function(e) {
     if (e) {
-      console.error('`npm install --save git://github.com/pgavazzi/react-native.git#acf46c0347` failed');
+      console.error('`npm install --save git://github.com/pgavazzi/react-unity.git#acf46c0347` failed');
       process.exit(1);
     }
 
