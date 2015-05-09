@@ -56,7 +56,6 @@ if (options.projectRoots) {
     options.projectRoots = options.projectRoots.split(',');
   }
 } else {
-  console.log("packager __dirname",__dirname);
   if (__dirname.match(/node_modules\/react-unity\/packager$/)) {
     // packager is running from node_modules of another project
     options.projectRoots = [path.resolve(__dirname, '../../..')];
