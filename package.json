@@ -27,7 +27,7 @@
     "Examples/SampleApp",
     "Libraries",
     "packager",
-    "cli-unity.js"
+    "cli-unity.js",
     "local-unity-cli",
     "init-unity.sh",
     "LICENSE",
