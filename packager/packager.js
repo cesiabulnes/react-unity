@@ -44,8 +44,8 @@ var options = parseCommandLine([{
   description: 'specify the root directories of app assets'
 }, {
   command: 'platform',
-  default: 'ios',
-  description: 'Specify the platform-specific blacklist (ios, android, web).'
+  default: 'unity',
+  description: 'Specify the platform-specific blacklist (ios, android, web, unity).'
 }, {
   command: 'skipflow',
   description: 'Disable flow checks'
@@ -56,7 +56,8 @@ if (options.projectRoots) {
     options.projectRoots = options.projectRoots.split(',');
   }
 } else {
-  if (__dirname.match(/node_modules\/react-native\/packager$/)) {
+  console.log("packager __dirname",__dirname);
+  if (__dirname.match(/node_modules\/react-unity\/packager$/)) {
     // packager is running from node_modules of another project
     options.projectRoots = [path.resolve(__dirname, '../../..')];
   } else {
