@@ -16,7 +16,6 @@ end
 def main(dest, app_name)
   source = File.expand_path("../Examples/SampleEditorApp", __FILE__)
   files = Dir.chdir(source) { Dir["**/*"] }
-    .reject { |file| file["project.xcworkspace"] || file["xcuserdata"] }
     .each { |file|
       new_file = file
         .gsub("SampleEditorApp", app_name)
