@@ -6,13 +6,13 @@
 
 var React = require('react-unity');
 var {
-  EditorRegistry,
+  AppRegistry,
   StyleSheet,
   Text,
   View,
 } = React;
 
-var EditorMyscript = React.createClass({
+var EditorMyScript = React.createClass({
   render: function() {
     return (
       <View style={styles.container}>
@@ -50,4 +50,4 @@ var styles = StyleSheet.create({
   },
 });
 
-EditorRegistry.registerComponent('EditorMyscript', () => EditorMyscript);
+AppRegistry.registerComponent('EditorMyScript', () => EditorMyscript);

@@ -20,12 +20,12 @@
       "source-map"
     ]
   },
-  "main": "Libraries/react-native/react-native.js",
+  "main": "Libraries-unity/react-unity/react-unity.js",
   "files": [
     "React",
     "React.podspec",
     "Examples/SampleEditorApp",
-    "Libraries",
+    "Libraries-unity",
     "packager",
     "cli-unity.js",
     "local-unity-cli",
