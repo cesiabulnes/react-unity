@@ -75,7 +75,7 @@ var render = function(
   return ReactIOSMount.renderComponent(element, mountInto, callback);
 };
 
-var ReactIOS = {
+var ReactUnity = {
   hasReactIOSInitialized: false,
   Children: {
     map: ReactChildren.map,
@@ -132,4 +132,4 @@ if (
   });
 }
 
-module.exports = ReactIOS;
+module.exports = ReactUnity;

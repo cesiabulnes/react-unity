@@ -15,8 +15,7 @@ require('ExceptionsManager').installConsoleErrorReporter();
 
 var React = require('React');
 var StyleSheet = require('StyleSheet');
-var View = require('View');
-var WarningBox = require('WarningBox');
+var Editor = require('Editor');
 
 var invariant = require('invariant');
 
@@ -29,15 +28,12 @@ function renderApplication<D, P, S>(
     rootTag,
     'Expect to have a valid rootTag, instead got ', rootTag
   );
-  var shouldRenderWarningBox = __DEV__ && console.yellowBoxEnabled;
-  var warningBox = shouldRenderWarningBox ? <WarningBox /> : null;
   React.render(
-    <View style={styles.appContainer}>
+    <Editor style={styles.appContainer}>
       <RootComponent
         {...initialProps}
       />
-      {warningBox}
-    </View>,
+    </Editor>,
     rootTag
   );
 }

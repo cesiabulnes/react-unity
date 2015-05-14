@@ -7,8 +7,8 @@ def cp(src, dest, app_name)
     content = File.read(src)
       .gsub("SampleEditorApp", app_name)
       .gsub("Examples/#{app_name}/", "")
-      .gsub("../../Libraries/", "node_modules/react-native/Libraries/")
-      .gsub("../../React/", "node_modules/react-native/React/")
+      .gsub("../../Libraries-unity/", "node_modules/react-unity/Libraries-unity/")
+      #.gsub("../../React/", "node_modules/react-unity/React/")
     File.write(dest, content)
   end
 end

@@ -88,8 +88,8 @@ function init(name) {
   fs.writeFileSync(path.join(root, 'package.json'), JSON.stringify(packageJson));
   process.chdir(root);
 
-  run('npm install --save git://github.com/pgavazzi/react-unity.git', function(e) {
-  //run('npm install --save ../react-unity', function(e) {
+  //run('npm install --save git://github.com/pgavazzi/react-unity.git', function(e) {
+  run('npm install --save ../react-unity', function(e) {
     if (e) {
       console.error('`npm install --save git://github.com/pgavazzi/react-unity.git` failed');
       process.exit(1);

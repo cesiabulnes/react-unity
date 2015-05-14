@@ -9,13 +9,13 @@ var {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
+  Editor,
 } = React;
 
 var EditorMyScript = React.createClass({
   render: function() {
     return (
-      <View style={styles.container}>
+      <Editor style={styles.container}>
         <Text style={styles.welcome}>
           Welcome to React Unity!
         </Text>
@@ -26,7 +26,7 @@ var EditorMyScript = React.createClass({
           Press Cmd+R to reload,{'\n'}
           Cmd+Control+Z for dev menu
         </Text>
-      </View>
+      </Editor>
     );
   }
 });

@@ -6,7 +6,7 @@
  * LICENSE file in the root directory of this source tree. An additional grant
  * of patent rights can be found in the PATENTS file in the same directory.
  *
- * @providesModule View
+ * @providesModule Editor
  * @flow
  */
 'use strict';
@@ -44,7 +44,7 @@ var stylePropType = StyleSheetPropType(ViewStylePropTypes);
  * `View`s are designed to be used with `StyleSheet`s for clarity and
  * performance, although inline styles are also supported.
  */
-var View = React.createClass({
+var Editor = React.createClass({
   mixins: [NativeMethodsMixin],
 
   /**
@@ -52,8 +52,8 @@ var View = React.createClass({
    * make `this` look like an actual native component class.
    */
   viewConfig: {
-    uiViewClassName: 'RCTView',
-    validAttributes: ReactIOSViewAttributes.RCTView
+    uiViewClassName: 'RCTUEditor',
+    validAttributes: ReactIOSViewAttributes.RCTUEditor
   },
 
   propTypes: {
@@ -154,15 +154,16 @@ var View = React.createClass({
   },
 
   render: function() {
-    return <RCTView {...this.props} />;
+    return <RCTUEditor {...this.props} />;
   },
 });
 
-var RCTView = createReactIOSNativeComponentClass({
-  validAttributes: ReactIOSViewAttributes.RCTView,
-  uiViewClassName: 'RCTView',
+var RCTUEditor = createReactIOSNativeComponentClass({
+  validAttributes: ReactIOSViewAttributes.RCTUEditor,
+  uiViewClassName: 'RCTUEditor',
 });
-RCTView.propTypes = View.propTypes;
+RCTUEditor.propTypes = Editor.propTypes;
+/*
 if (__DEV__) {
   var viewConfig = RCTUIManager.viewConfigs && RCTUIManager.viewConfigs.RCTView || {};
   for (var prop in viewConfig.nativeProps) {
@@ -174,10 +175,11 @@ if (__DEV__) {
     }
   }
 }
+*/
 
-var ViewToExport = RCTView;
-if (__DEV__) {
-  ViewToExport = View;
-}
+var EditorToExport = RCTUEditor;
+//if (__DEV__) {
+//  ViewToExport = View;
+//}
 
-module.exports = ViewToExport;
+module.exports = EditorToExport;

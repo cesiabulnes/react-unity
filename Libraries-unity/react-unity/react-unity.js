@@ -21,6 +21,7 @@ var ReactUnity = Object.assign(Object.create(require('React')), {
   // Components
   //ActivityIndicatorIOS: require('ActivityIndicatorIOS'),
   //DatePickerIOS: require('DatePickerIOS'),
+  Editor: require('Editor'),
   //Image: require('Image'),
   //ListView: require('ListView'),
   //MapView: require('MapView'),
@@ -37,7 +38,7 @@ var ReactUnity = Object.assign(Object.create(require('React')), {
   //TouchableHighlight: require('TouchableHighlight'),
   //TouchableOpacity: require('TouchableOpacity'),
   //TouchableWithoutFeedback: require('TouchableWithoutFeedback'),
-  View: require('View'),
+  //View: require('View'),
   //WebView: require('WebView'),
 
   // APIs

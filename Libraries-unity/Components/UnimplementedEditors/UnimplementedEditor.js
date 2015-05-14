@@ -2,16 +2,16 @@
  * Common implementation for a simple stubbed view. Simply applies the view's styles to the inner
  * View component and renders its children.
  *
- * @providesModule UnimplementedView
+ * @providesModule UnimplementedEditor
  */
 
 'use strict';
 
 var React = require('React');
 var StyleSheet = require('StyleSheet');
-var View = require('View');
+var Editor = require('Editor');
 
-var UnimplementedView = React.createClass({
+var UnimplementedEditor = React.createClass({
   setNativeProps: function() {
     // Do nothing.
     // This method is required in order to use this view as a Touchable* child.
@@ -19,7 +19,7 @@ var UnimplementedView = React.createClass({
   },
   render: function() {
     return (
-      <View style={[styles.unimplementedView, this.props.style]}>
+      <View style={[styles.unimplementedEditor, this.props.style]}>
         {this.props.children}
       </View>
     );
@@ -27,11 +27,11 @@ var UnimplementedView = React.createClass({
 });
 
 var styles = StyleSheet.create({
-  unimplementedView: {
+  unimplementedEditor: {
     borderWidth: 1,
     borderColor: 'red',
     alignSelf: 'flex-start',
   }
 });
 
-module.exports = UnimplementedView;
+module.exports = UnimplementedEditor;

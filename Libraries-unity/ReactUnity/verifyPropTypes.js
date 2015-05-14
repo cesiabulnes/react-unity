@@ -12,7 +12,7 @@
 'use strict';
 
 var ReactIOSStyleAttributes = require('ReactIOSStyleAttributes');
-var View = require('View');
+var Editor = require('Editor');
 
 function verifyPropTypes(
   component: Function,
@@ -25,7 +25,7 @@ function verifyPropTypes(
   var nativeProps = viewConfig.nativeProps;
   for (var prop in nativeProps) {
     if (!component.propTypes[prop] &&
-        !View.propTypes[prop] &&
+        !Editor.propTypes[prop] &&
         !ReactIOSStyleAttributes[prop] &&
         (!nativePropsToIgnore || !nativePropsToIgnore[prop])) {
       throw new Error(

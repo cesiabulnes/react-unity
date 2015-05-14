@@ -12,7 +12,7 @@
 'use strict';
 
 var RCTUIManager = require('NativeModules').UIManager;
-var UnimplementedView = require('UnimplementedView');
+var UnimplementedEditor = require('UnimplementedEditor');
 
 var createReactIOSNativeComponentClass = require('createReactIOSNativeComponentClass');
 var deepDiffer = require('deepDiffer');
@@ -43,7 +43,7 @@ function requireNativeComponent(
 ): Function {
   var viewConfig = RCTUIManager[viewName];
   if (!viewConfig || !viewConfig.nativeProps) {
-    return UnimplementedView;
+    return UnimplementedEditor;
   }
   var nativeProps = {
     ...RCTUIManager.RCTView.nativeProps,
