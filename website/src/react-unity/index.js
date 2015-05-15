@@ -43,80 +43,50 @@ var index = React.createClass({
 
           <h2>Native Unity Components</h2>
           <p>
-            With React Unity, you can use the standard Unity editor components such as UITabBar and UINavigationController on Unity Editor.  This gives your app a consistent look and feel with the rest of the editor ecosystem, and keeps the quality bar high.  These components are easily incorporated into your own editor UI using their React component counterparts, such as TabBarIOS and NavigatorIOS.
+            With React Unity, you can use the standard Unity editor components such as EditorWindow and Button used in the Unity Editor.  This gives your app a consistent look and feel with the rest of the editor ecosystem, and keeps the quality bar high.  These components are easily incorporated into your own editor UI using their React component counterparts, such as Editor and Button.
           </p>
           <Prism>
 {`var React = require('react-unity');
-var { TabBarIOS, NavigatorIOS } = React;
+var { Editor, Button } = React;
 
-var App = React.createClass({
+var EditorMyScript = React.createClass({
   render: function() {
     return (
-      <TabBarIOS>
-        <TabBarIOS.Item title="React Unity" selected={true}>
-          <NavigatorIOS initialRoute={{ title: 'React Native' }} />
-        </TabBarIOS.Item>
-      </TabBarIOS>
+      <Editor>
+        <Button label="React Unity" onClick={this.onClickButton}=>
+        </Button>
+      </Editor>
     );
   },
-});`}
-          </Prism>
-
-          <h2>Asynchronous Execution</h2>
-          <p>
-            All operations between the JavaScript application code and the native platform are performed asynchronously, and the native modules can also make use of additional threads as well.  This means we can decode images off of the main thread, save to disk in the background, measure text and compute layouts without blocking the UI, and more.  As a result, React Native apps are naturally fluid and responsive.  The communication is also fully serializable, which allows us to leverage Chrome Developer Tools to debug the JavaScript while running the complete app, either in the simulator or on a physical device.
-          </p>
-          <p>
-            See <a href="docs/debugging.html#content">Debugging</a>.
-          </p>
-          <img src="/react-native/img/chrome_breakpoint.png" width="800" height="443" />
-
-          <h2>Touch Handling</h2>
-          <p>
-            iOS has a very powerful system called the Responder Chain to negotiate touches in complex view hierarchies which does not have a universal analog on the web. React Native implements a similar responder system and provides high level components such as TouchableHighlight that integrate properly with scroll views and other elements without any additional configuration.
-          </p>
-          <Prism>
-{`var React = require('react-native');
-var { ScrollView, TouchableHighlight, Text } = React;
-
-var TouchDemo = React.createClass({
-  render: function() {
-    return (
-      <ScrollView>
-        <TouchableHighlight onPress={() => console.log('pressed')}>
-          <Text>Proper Touch Handling</Text>
-        </TouchableHighlight>
-      </ScrollView>
-    );
-  },
+  onClickButton: function() {
+    console.log("Button pressed!");
+  }
 });`}
           </Prism>
 
           <h2>Flexbox and Styling</h2>
           <p>
-            Laying out views should be easy, which is why we brought the flexbox layout model from the web to React Native.  Flexbox makes it simple to build the most common UI layouts, such as stacked and nested boxes with margin and padding.  React Native also supports common web syles, such as fontWeight, and the StyleSheet abstraction provides an optimized mechanism to declare all your styles and layout right along with the components that use them and apply them inline.
+            Laying out views should be easy, which is why we brought the flexbox layout model from the web to React Unity.  Flexbox makes it simple to build the most common UI layouts, such as stacked and nested boxes with margin and padding.  React Unity also supports common web syles, such as fontWeight, and the StyleSheet abstraction provides an optimized mechanism to declare all your styles and layout right along with the components that use them and apply them inline.
           </p>
           <Prism>
-{`var React = require('react-native');
-var { Image, StyleSheet, Text, View } = React;
+{`var React = require('react-unity');
+var { Image, StyleSheet, Text, Editor } = React;
 
-var ReactNative = React.createClass({
+var EditorMyScript = React.createClass({
   render: function() {
     return (
-      <View style={styles.row}>
+      <Editor style={styles.row}>
         <Image
           source={{uri: 'http://facebook.github.io/react/img/logo_og.png'}}
           style={styles.image}
         />
-        <View style={styles.text}>
-          <Text style={styles.title}>
-            React Native
-          </Text>
-          <Text style={styles.subtitle}>
-            Build high quality mobile apps using React
-          </Text>
-        </View>
-      </View>
+        <Text style={styles.title}>
+          React Unity
+        </Text>
+        <Text style={styles.subtitle}>
+          Build high quality Unity Editor UI using React
+        </Text>
+      </Editor>
     );
   },
 });
@@ -129,61 +99,33 @@ var styles = StyleSheet.create({
 });`}
           </Prism>
 
-          <h2>Polyfills</h2>
-          <p>
-            React Native is focused on changing the way view code is written.  For the rest, we look to the web for universal standards and polyfill those APIs where appropriate. You can use npm to install JavaScript libraries that work on top of the functionality baked into React Native, such as XMLHttpRequest, window.requestAnimationFrame, and navigator.geolocation.  We are working on expanding the available APIs, and are excited for the Open Source community to contribute as well.
-          </p>
-          <Prism>
-{`var React = require('react-native');
-var { Text } = React;
-
-var GeoInfo = React.createClass({
-  getInitialState: function() {
-    return { position: 'unknown' };
-  },
-  componentDidMount: function() {
-    navigator.geolocation.getCurrentPosition(
-      (position) => this.setState({position}),
-      (error) => console.error(error)
-    );
-  },
-  render: function() {
-    return (
-      <Text>
-        Position: {JSON.stringify(this.state.position)}
-      </Text>
-    );
-  },
-});`}
-          </Prism>
-
           <h2>Extensibility</h2>
           <p>
-            It is certainly possible to create a great app using React Native without writing a single line of native code, but React Native is also designed to be easily extended with custom native views and modules - that means you can reuse anything you{"'"}ve already built, and can import and use your favorite native libraries.  To create a simple module in iOS, create a new class that implements the RCTBridgeModule protocol, and wrap the function that you want to make available to JavaScript in RCT_EXPORT_METHOD. Additionally, the class itself must be explicitly exported with RCT_EXPORT_MODULE();.
+            It is certainly possible to create a great app using React Unity without writing a single line of native code, but React Native is also designed to be easily extended with custom native views and modules - that means you can reuse anything you{"'"}ve already built, and can import and use your favorite native libraries.  To create a simple module in Unity, create a new class that implements the RCTUBridgeModule interface, and add the RCTUExport attribute [RCTUExport] the function that you want to make available to JavaScript. Additionally, the class itself must be explicitly exported with the RCTUExportModule attribute [RCTUExportModule].
           </p>
           <Prism>
-{`// Objective-C
+{`// Unity C#
 
-#import "RCTBridgeModule.h"
+using UnityEditor.React;
 
-@interface MyCustomModule : NSObject <RCTBridgeModule>
-@end
-
-@implementation MyCustomModule
-
-RCT_EXPORT_MODULE();
-
-// Available as NativeModules.MyCustomModule.processString
-RCT_EXPORT_METHOD(processString:(NSString *)input callback:(RCTResponseSenderBlock)callback)
+[RCTUExportModule]
+public class MyCustomModule : RCTUBridgeModule
 {
-  callback(@[[input stringByReplacingOccurrencesOfString:@"Goodbye" withString:@"Hello"];]]);
+  // Available as NativeModules.MyCustomModule.processString
+  [RCTUExport]
+  public void processString(string input, callback cb)
+  {
+    cb(input.Replace("Goodbye","Hello));
+  }
 }
-@end`}
+
+`}
           </Prism>
+
           <Prism>
 {`// JavaScript
 
-var React = require('react-native');
+var React = require('react-unity');
 var { NativeModules, Text } = React;
 
 var Message = React.createClass({
@@ -202,45 +144,7 @@ var Message = React.createClass({
   },
 });`}
           </Prism>
-          <p>
-            Custom iOS views can be exposed by subclassing RCTViewManager, implementing a -(UIView *)view method, and exporting properties with the RCT_EXPORT_VIEW_PROPERTY macro.  Then a simple JavaScript file connects the dots.
-          </p>
-          <Prism>
-{`// Objective-C
 
-#import "RCTViewManager.h"
-
-@interface MyCustomViewManager : RCTViewManager
-@end
-
-@implementation MyCustomViewManager
-
-- (UIView *)view
-{
-  return [[MyCustomView alloc] init];
-}
-
-RCT_EXPORT_VIEW_PROPERTY(myCustomProperty);
-@end`}
-          </Prism>
-          <Prism>
-{`// JavaScript
-
-var React = require('react-native');
-var { requireNativeComponent } = React;
-
-class MyCustomView extends React.Component {
-  render() {
-    return <NativeMyCustomView {...this.props} />;
-  }
-}
-MyCustomView.propTypes = {
-  myCustomProperty: React.PropTypes.oneOf(['a', 'b']),
-};
-
-var NativeMyCustomView = requireNativeComponent('MyCustomView', MyCustomView);
-module.exports = MyCustomView;`}
-          </Prism>
           </div>
           <section className="home-bottom-section">
             <div className="buttons-unit">
