@@ -19,7 +19,7 @@ var index = React.createClass({
           <div className="wrap">
             <div className="text"><strong>React Unity</strong></div>
             <div className="minitext">
-              A framework for building native Unity UI using React
+              A framework for building native Unity Editor UI using React
             </div>
           </div>
         </div>
@@ -31,8 +31,8 @@ var index = React.createClass({
             React Unity enables you to build editor-class UI experiences on native platforms using a consistent developer experience based on JavaScript and
             {' '}<a href="http://facebook.github.io/react/" >React</a>{'. '}
             The focus of React Unity is on developer efficiency across all the platforms you care about &mdash; learn once, write anywhere.
-            Unity uses React Unity in multiple production Unity UIs and will continue investing in React Unity.
           </p>
+
           </div>
 
           <div className="buttons-unit">
@@ -66,7 +66,7 @@ var EditorMyScript = React.createClass({
 
           <h2>Flexbox and Styling</h2>
           <p>
-            Laying out views should be easy, which is why we brought the flexbox layout model from the web to React Unity.  Flexbox makes it simple to build the most common UI layouts, such as stacked and nested boxes with margin and padding.  React Unity also supports common web syles, such as fontWeight, and the StyleSheet abstraction provides an optimized mechanism to declare all your styles and layout right along with the components that use them and apply them inline.
+            Laying out views should be easy, which is why we brought the flexbox layout model from the web to React Unity.  Flexbox makes it simple to build the most common UI layouts, such as stacked and nested boxes with margin and padding.  React Unity also supports common web styles, such as fontWeight, and the StyleSheet abstraction provides an optimized mechanism to declare all your styles and layout right along with the components that use them and apply them inline.
           </p>
           <Prism>
 {`var React = require('react-unity');
@@ -101,7 +101,7 @@ var styles = StyleSheet.create({
 
           <h2>Extensibility</h2>
           <p>
-            It is certainly possible to create a great app using React Unity without writing a single line of native code, but React Native is also designed to be easily extended with custom native views and modules - that means you can reuse anything you{"'"}ve already built, and can import and use your favorite native libraries.  To create a simple module in Unity, create a new class that implements the RCTUBridgeModule interface, and add the RCTUExport attribute [RCTUExport] the function that you want to make available to JavaScript. Additionally, the class itself must be explicitly exported with the RCTUExportModule attribute [RCTUExportModule].
+            It is certainly possible to create a great app using React Unity without writing a single line of native code, but React Native is also designed to be easily extended with custom native views and modules - that means you can reuse anything you{"'"}ve already built, and can import and use your favorite native libraries.  To create a simple module in Unity, create a new class that implements the RCTUBridgeModule interface, and add the RCTUExport attribute [RCTUExport] to the function that you want to make available to JavaScript. Additionally, the class itself must be explicitly exported with the RCTUExportModule attribute [RCTUExportModule].
           </p>
           <Prism>
 {`// Unity C#
