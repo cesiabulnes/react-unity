@@ -32,7 +32,7 @@ assign(ReactIOSTextComponent.prototype, {
   mountComponent: function(rootID, transaction, context) {
     this._rootNodeID = rootID;
     var tag = ReactIOSTagHandles.allocateTag();
-    RCTUIManager.createView(tag, 'RCTRawText', {text: this._stringText});
+    RCTUIManager.CreateView(tag, 'RCTRawText', {text: this._stringText});
     return {
       rootNodeID: rootID,
       tag: tag,

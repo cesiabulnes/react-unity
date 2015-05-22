@@ -11,11 +11,11 @@
  */
 'use strict';
 
-require('ExceptionsManager').installConsoleErrorReporter();
+//require('ExceptionsManager').installConsoleErrorReporter();
 
 var React = require('React');
 var StyleSheet = require('StyleSheet');
-var Editor = require('Editor');
+var View = require('View');
 
 var invariant = require('invariant');
 
@@ -29,11 +29,11 @@ function renderApplication<D, P, S>(
     'Expect to have a valid rootTag, instead got ', rootTag
   );
   React.render(
-    <Editor style={styles.appContainer}>
+    <View style={styles.appContainer}>
       <RootComponent
         {...initialProps}
       />
-    </Editor>,
+    </View>,
     rootTag
   );
 }

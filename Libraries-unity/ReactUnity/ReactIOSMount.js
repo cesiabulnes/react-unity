@@ -159,7 +159,7 @@ var ReactIOSMount = {
       );
       var addChildTags = [mountImage.tag];
       var addAtIndices = [0];
-      RCTUIManager.manageChildren(
+      RCTUIManager.ManageChildren(
         ReactIOSTagHandles.mostRecentMountedNodeHandleForRootNodeID(containerID),
         null,         // moveFromIndices
         null,         // moveToIndices

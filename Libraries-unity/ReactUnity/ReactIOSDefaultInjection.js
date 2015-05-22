@@ -52,6 +52,7 @@ function inject() {
   EventPluginHub.injection.injectEventPluginOrder(IOSDefaultEventPluginOrder);
   EventPluginHub.injection.injectInstanceHandle(ReactInstanceHandles);
 
+/* TODO
   ResponderEventPlugin.injection.injectGlobalResponderHandler(
     ReactIOSGlobalResponderHandler
   );
@@ -59,7 +60,7 @@ function inject() {
   ResponderEventPlugin.injection.injectGlobalInteractionHandler(
     ReactIOSGlobalInteractionHandler
   );
-
+*/
   /**
    * Some important event plugins included by default (without having to require
    * them).
@@ -82,11 +83,11 @@ function inject() {
   );
 
   // Can't import View here because it depends on React to make its composite
-  var RCTView = createReactIOSNativeComponentClass({
+  var RCTUView = createReactIOSNativeComponentClass({
     validAttributes: {},
-    uiViewClassName: 'RCTView',
+    uiViewClassName: 'RCTUView',
   });
-  ReactEmptyComponent.injection.injectEmptyComponent(RCTView);
+  ReactEmptyComponent.injection.injectEmptyComponent(RCTUView);
 
   EventPluginUtils.injection.injectMount(ReactIOSMount);
 

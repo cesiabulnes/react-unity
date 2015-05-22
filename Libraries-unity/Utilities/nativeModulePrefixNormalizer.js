@@ -11,15 +11,15 @@
  */
 'use strict';
 
-// Dirty hack to support old (RK) and new (RCT) native module name conventions
+// Dirty hack to support old (RK) and new (RCTU) native module name conventions
 function nativeModulePrefixNormalizer(
   modules: {[key: string]: any}
 ): void {
   Object.keys(modules).forEach((moduleName) => {
-    var strippedName = moduleName.replace(/^(RCT|RK)/, '');
-    if (modules['RCT' + strippedName] && modules['RK' + strippedName]) {
+    var strippedName = moduleName.replace(/^(RCTU|RK)/, '');
+    if (modules['RCTU' + strippedName] && modules['RK' + strippedName]) {
       throw new Error(
-        'Module cannot be registered as both RCT and RK: ' + moduleName
+        'Module cannot be registered as both RCTU and RK: ' + moduleName
       );
     }
     if (strippedName !== moduleName) {

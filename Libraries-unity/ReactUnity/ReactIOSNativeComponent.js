@@ -124,7 +124,7 @@ ReactIOSNativeComponent.Mixin = {
         createdTags[i] = mountImage.tag;
       }
       RCTUIManager
-        .manageChildren(containerTag, null, null, createdTags, indexes, null);
+        .ManageChildren(containerTag, null, null, createdTags, indexes, null);
     }
   },
 
@@ -251,7 +251,7 @@ ReactIOSNativeComponent.Mixin = {
       this._currentElement.props, // next props
       this.viewConfig.validAttributes
     );
-    RCTUIManager.createView(tag, this.viewConfig.uiViewClassName, updatePayload);
+    RCTUIManager.CreateView(tag, this.viewConfig.uiViewClassName, updatePayload);
 
     this._registerListenersUponCreation(this._currentElement.props);
     this.initializeChildren(

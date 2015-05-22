@@ -13,6 +13,7 @@
 
 var invariant = require('invariant');
 var renderApplication = require('renderApplication');
+var unity = require('unity');
 
 if (__DEV__) {
   // In order to use Cmd+P to record/dump perf data, we need to make sure

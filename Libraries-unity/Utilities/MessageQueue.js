@@ -22,7 +22,7 @@ var JSTimersExecution = require('JSTimersExecution');
 var INTERNAL_ERROR = 'Error in MessageQueue implementation';
 
 // Prints all bridge traffic to console.log
-var DEBUG_SPY_MODE = false;
+var DEBUG_SPY_MODE = true;
 
 type ModulesConfig = {
   [key:string]: {

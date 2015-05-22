@@ -60,7 +60,7 @@ var dangerouslyProcessChildrenUpdates = function(childrenUpdates, markupList) {
   for (var updateParentTagString in byContainerTag) {
     var updateParentTagNumber = +updateParentTagString;
     var childUpdatesToSend = byContainerTag[updateParentTagNumber];
-    RCTUIManager.manageChildren(
+    RCTUIManager.ManageChildren(
       updateParentTagNumber,
       childUpdatesToSend.moveFromIndices,
       childUpdatesToSend.moveToIndices,

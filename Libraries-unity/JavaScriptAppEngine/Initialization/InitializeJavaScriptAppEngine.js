@@ -133,10 +133,16 @@ function setupGeolocation() {
   GLOBAL.navigator.geolocation = require('Geolocation');
 }
 
+
 setupDocumentShim();
+/*
 setupRedBoxErrorHandler();
 setupTimers();
+*/
 setupAlert();
+/*
 setupPromise();
 setupXHR();
 setupGeolocation();
+*/
+console.log("Please uncomment these lines above.");
